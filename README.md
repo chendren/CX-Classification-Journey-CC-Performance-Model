@@ -1,6 +1,6 @@
 # Contact Center Analytics - MLX Fine-Tuning
 
-> Production-ready fine-tuned Mistral-7B model for contact center analytics using Apple MLX
+> Ready for deployment and evaluation fine-tuned Mistral-7B model for contact center analytics using Apple MLX
 
 ## Quick Start
 
@@ -8,7 +8,7 @@
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Use the production model
+# 2. Use the best model
 mlx_lm.generate \
   --model models/mistral-7b-mlx \
   --adapter-path adapters/contact-center-mlx-small \
@@ -16,7 +16,7 @@ mlx_lm.generate \
   --max-tokens 500
 ```
 
-**Production Model:** `adapters/contact-center-mlx-small/PRODUCTION_MODEL.safetensors`
+**Best Model:** `adapters/contact-center-mlx-small/BEST_MODEL.safetensors`
 **Validation Perplexity:** 1.35 (Excellent)
 **Training Loss Improvement:** 74%
 **Training Time:** 5.3 hours on M4 Max
@@ -39,7 +39,7 @@ This project successfully fine-tuned **Mistral-7B-Instruct-v0.3** using **Apple 
 
 ---
 
-## Production Model
+## Best Model
 
 ### Model Details
 
@@ -209,7 +209,7 @@ Quality: EXCELLENT (perplexity < 5)
 | 100       | 0.326    | 68%         | Improving |
 | 500       | 0.287    | 72%         | Improving |
 | 900       | 0.268    | 74%         | Best (tied) |
-| **1200**  | **0.268** | **74%**     | **PRODUCTION** |
+| **1200**  | **0.268** | **74%**     | **DEPLOYMENT** |
 | 1300      | 0.293    | 71%         | Overfitting detected |
 
 ### Inference Speed
@@ -237,7 +237,7 @@ fine-tuning/
 │
 ├── adapters/                   # LoRA adapters
 │   └── contact-center-mlx-small/
-│       ├── PRODUCTION_MODEL.safetensors  # Best model (iter 1200)
+│       ├── BEST_MODEL.safetensors  # Best model (iter 1200)
 │       ├── 0000300_adapters.safetensors  # Checkpoint iter 300
 │       ├── 0000600_adapters.safetensors  # Checkpoint iter 600
 │       ├── 0000900_adapters.safetensors  # Checkpoint iter 900
@@ -444,7 +444,7 @@ python
 >>> # Use model...
 ```
 
-### Production Options
+### Deployment Options
 
 1. **FastAPI Server** - See `../inference/` for deployment code
 2. **Docker Container** - Containerized inference service
