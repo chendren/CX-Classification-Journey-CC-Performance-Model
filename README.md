@@ -27,6 +27,8 @@ mlx_lm.generate \
 
 This project successfully fine-tuned **Mistral-7B-Instruct-v0.3** using **Apple MLX** for contact center analytics. The model achieves excellent performance (perplexity 1.35) and can analyze conversations 80x cheaper and 5-10x faster than GPT-4.
 
+**Training Data**: All training data was synthetically generated using **InceptionLabs.ai's Mercury model**, enabling fast, high-quality, and cost-effective data generation for contact center conversations and analytics.
+
 ### Key Achievements
 
 - 74% validation loss improvement (1.017 → 0.268)
