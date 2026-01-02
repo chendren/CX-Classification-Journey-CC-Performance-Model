@@ -1,0 +1,197 @@
+# Contact Center Analytics - MLX Fine-Tuning .gitignore
+
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ============================================================================
+# Virtual Environment
+# ============================================================================
+venv/
+env/
+ENV/
+.venv
+*.virtualenv
+
+# ============================================================================
+# Jupyter Notebook
+# ============================================================================
+.ipynb_checkpoints
+*.ipynb
+
+# ============================================================================
+# Training Data (LARGE FILES - Don't commit datasets)
+# ============================================================================
+data/**/*.jsonl
+data/mlx_small/
+data/mlx/
+data/train*.jsonl
+data/validation*.jsonl
+data/valid*.jsonl
+data/test*.jsonl
+data/agent_profiles/*.json
+
+# Keep placeholder files and documentation
+!data/.gitkeep
+!data/README.md
+!data/mlx_small/.gitkeep
+!data/*/README.md
+
+# ============================================================================
+# Models & Checkpoints (LARGE FILES - Don't commit model weights)
+# ============================================================================
+
+# Base models directory (usually 10+ GB)
+models/**/*
+!models/.gitkeep
+!models/README.md
+
+# Model weights and binaries
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+checkpoint-*/
+pytorch_model.bin
+*.onnx
+*.msgpack
+
+# MLX-specific model files
+*.npz
+*.mlxmodel
+
+# Adapter checkpoints (except config)
+adapters/**/0*.safetensors
+adapters/**/adapters.safetensors
+!adapters/**/adapter_config.json
+!adapters/**/README.md
+!adapters/.gitkeep
+
+# Keep PRODUCTION_MODEL for reference (but it's still large)
+# Uncomment if you want to commit production model:
+# !adapters/**/PRODUCTION_MODEL.safetensors
+
+# ============================================================================
+# Caches
+# ============================================================================
+.cache/
+~/.cache/huggingface/
+__pypackages__/
+*.manifest
+*.spec
+
+# ============================================================================
+# Training Logs (Don't commit - can be large)
+# ============================================================================
+*.log
+logs/
+runs/
+tensorboard/
+wandb/
+mlruns/
+
+# Specific log files
+training.log
+training_*.log
+mlx_*.log
+validation_*.log
+test_*.log
+full_*.log
+
+# ============================================================================
+# Temporary & Status Files
+# ============================================================================
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Status tracking files (archived in docs/archive/)
+*_STATUS.md
+STATUS_*.md
+QUICK_STATUS.md
+CURRENT_STATUS.md
+DOWNLOAD_STATUS.md
+
+# Test/reasoning files
+reasoning_checkpoint.jsonl
+test_*.jsonl
+
+# Mac Specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# API Keys & Secrets
+*.key
+*.pem
+secrets/
+credentials/
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup Files
+*.bak
+*.backup
+*_backup
+
+# Large Dataset Files
+*.csv.gz
+*.parquet
+*.arrow
+
+# Model Config Exports
+exported_config.json
+
+# Test Outputs
+test_output/
+evaluation_results/
